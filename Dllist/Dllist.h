@@ -37,7 +37,7 @@ Dllist *dllistNew(void);
     Return:
         bool: true on success, false on failure
 */
-bool dllistAdd(Dllist * list, int data);
+bool dllistAdd(Dllist *list, int data);
 
 /* dllistFind() searches a doubly linked list for the first occurance of a given value
     Args:
@@ -46,7 +46,7 @@ bool dllistAdd(Dllist * list, int data);
     Return:
         DllistNode* of the found node. null if node not found.
 */
-DllistNode *dllistFind(Dllist * list, int data);
+DllistNode *dllistFind(Dllist *list, int data);
 
 /* dllistAddAfter() Adds item and data after specified value
     Args:
@@ -56,7 +56,7 @@ DllistNode *dllistFind(Dllist * list, int data);
     Return:
         True if node was placed in list, False if didn't find after or error
 */
-bool dllistAddAfter(Dllist * list, int data, int after);
+bool dllistAddAfter(Dllist *list, int data, int after);
 
 /* dllistAddBefore() Adds item and data after specified value
     Args:
@@ -66,7 +66,7 @@ bool dllistAddAfter(Dllist * list, int data, int after);
     Return:
         True if node was placed in list, False if didn't find before or error
 */
-bool dllistAddBefore(Dllist * list, int data, int before);
+bool dllistAddBefore(Dllist *list, int data, int before);
 
 /* dllistSort() sort a linked list in place in
                 ascending/aplhanumerical order (i.e.: 1 - 10)
@@ -77,7 +77,7 @@ bool dllistAddBefore(Dllist * list, int data, int before);
     Return:
         bool : true on success, false on empty lists or no lists
 */
-bool dllistSort(Dllist * l, int (*Compare) (int, int));
+bool dllistSort(Dllist *l, int (*Compare) (int, int));
 
 /* dllistRmHead() removes only the head of a doubly linked list
     Args:
@@ -85,7 +85,7 @@ bool dllistSort(Dllist * l, int (*Compare) (int, int));
     Return:
         DllistNode* of the removed head. null if list is empty.
 */
-DllistNode *dllistRmHead(Dllist * list);
+DllistNode *dllistRmHead(Dllist *list);
 
 /* dllistRm() removes from existing doubly linked list
     Args:
@@ -94,7 +94,7 @@ DllistNode *dllistRmHead(Dllist * list);
     Return:
         DllistNode* of the removed node. null if node not found.
 */
-DllistNode *dllistRm(Dllist * list, int data);
+DllistNode *dllistRm(Dllist *list, int data);
 
 /* dllistDestroy() destroys a doubly linked list
     Args:
@@ -102,6 +102,6 @@ DllistNode *dllistRm(Dllist * list, int data);
     Return:
         bool : true on success, false of failure
 */
-bool dllistDestroy(Dllist * list);
+bool dllistDestroy(Dllist *list);
 
 #endif

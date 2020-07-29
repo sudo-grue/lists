@@ -34,7 +34,7 @@ Llist *llistNew(void);
     Return:
         bool: true on success, false on failure
 */
-bool llistAdd(Llist * list, int data);
+bool llistAdd(Llist *list, int data);
 
 /* llistFind() searches a linked list for the first occurance of a given value
     Args:
@@ -43,7 +43,7 @@ bool llistAdd(Llist * list, int data);
     Return:
         ListNode* of the found node. null if node not found.
 */
-LlistNode *llistFind(Llist * list, int data);
+LlistNode *llistFind(Llist *list, int data);
 
 /* llistSort() sort a linked list in place in
                 ascending/aplhanumerical order (i.e.: 1 - 10)
@@ -55,7 +55,7 @@ LlistNode *llistFind(Llist * list, int data);
     Return:
         bool : true on success, false on empty lists or no lists
 */
-bool llistSort(Llist * l, int (*Compare) (int, int));
+bool llistSort(Llist *l, int (*Compare) (int, int));
 
 /* llistRmHead() removes only the head of a linked list
     Args:
@@ -63,7 +63,7 @@ bool llistSort(Llist * l, int (*Compare) (int, int));
     Return:
         ListNode* of the removed head. null if list is empty.
 */
-LlistNode *llistRmHead(Llist * list);
+LlistNode *llistRmHead(Llist *list);
 
 /* llistRm() removes from existing linked list
     Args:
@@ -72,7 +72,7 @@ LlistNode *llistRmHead(Llist * list);
     Return:
         ListNode* of the removed node. null if node not found.
 */
-LlistNode *llistRm(Llist * list, int data);
+LlistNode *llistRm(Llist *list, int data);
 
 /* llistAddAfter() Adds item and data after specified value
     Args:
@@ -82,7 +82,7 @@ LlistNode *llistRm(Llist * list, int data);
     Return:
         True if node was placed in list, False if didn't find after
 */
-bool llistAddAfter(Llist * l, int data, int after);
+bool llistAddAfter(Llist *l, int data, int after);
 
 /* llistDestroy() destroys a linked list
     Args:
@@ -90,6 +90,6 @@ bool llistAddAfter(Llist * l, int data, int after);
     Return:
         bool : true on success, false of failure
 */
-bool llistDestroy(Llist * list);
+bool llistDestroy(Llist *list);
 
 #endif

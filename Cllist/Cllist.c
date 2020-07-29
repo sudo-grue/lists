@@ -11,7 +11,7 @@ int cllistCompare(int a, int b)
 	return a <= b;
 }
 
-bool cllistSort(Cllist * list, int (*Compare) (int, int))
+bool cllistSort(Cllist *list, int (*Compare) (int, int))
 {
 	if (!list || !list->head) {
 		return false;
@@ -31,7 +31,7 @@ bool cllistSort(Cllist * list, int (*Compare) (int, int))
 	return true;
 }
 
-bool cllistInsertAfter(Cllist * list, int data, int after)
+bool cllistInsertAfter(Cllist *list, int data, int after)
 {
 	CllistNode *node = cllistFind(list, after);
 	if (!node) {
@@ -61,7 +61,7 @@ Cllist *cllistNew(void)
 	return cll;
 }
 
-bool cllistAdd(Cllist * list, int data)
+bool cllistAdd(Cllist *list, int data)
 {
 	if (!list) {
 		return false;
@@ -83,7 +83,7 @@ bool cllistAdd(Cllist * list, int data)
 	return true;
 }
 
-CllistNode *cllistFind(Cllist * list, int data)
+CllistNode *cllistFind(Cllist *list, int data)
 {
 	if (!list || !list->head) {
 		return NULL;
@@ -98,7 +98,7 @@ CllistNode *cllistFind(Cllist * list, int data)
 	return NULL;
 }
 
-CllistNode *cllistRmHead(Cllist * list)
+CllistNode *cllistRmHead(Cllist *list)
 {
 	if (!list || !list->head) {
 		return NULL;
@@ -115,7 +115,7 @@ CllistNode *cllistRmHead(Cllist * list)
 	return head;
 }
 
-CllistNode *cllistRmTail(Cllist * list)
+CllistNode *cllistRmTail(Cllist *list)
 {
 	if (!list || !list->head) {
 		return NULL;
@@ -136,7 +136,7 @@ CllistNode *cllistRmTail(Cllist * list)
 	return tail;
 }
 
-CllistNode *cllistRm(Cllist * list, int data)
+CllistNode *cllistRm(Cllist *list, int data)
 {
 	if (!list || !list->head) {
 		return NULL;
@@ -168,7 +168,7 @@ CllistNode *cllistRm(Cllist * list, int data)
 	return next;
 }
 
-bool cllistDestroy(Cllist * list)
+bool cllistDestroy(Cllist *list)
 {
 	if (!list) {
 		return false;
@@ -184,7 +184,7 @@ bool cllistDestroy(Cllist * list)
 	return true;
 }
 
-bool cllistIsCircular(Cllist * list)
+bool cllistIsCircular(Cllist *list)
 {
 	if (!list || !list->head) {
 		return false;

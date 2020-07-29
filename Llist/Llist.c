@@ -16,7 +16,7 @@ int llistCompare(int a, int b)
 
 // This is not an insertion sort, but meets expectations of assignment (very
 // inefficient)
-bool llistSort(Llist * list, int (*Compare) (int, int))
+bool llistSort(Llist *list, int (*Compare) (int, int))
 {
 	if (!list || !list->head) {
 		return false;
@@ -46,7 +46,7 @@ Llist *llistNew(void)
 	return ll;
 }
 
-bool llistAdd(Llist * list, int data)
+bool llistAdd(Llist *list, int data)
 {
 	if (!list) {
 		return false;
@@ -61,7 +61,7 @@ bool llistAdd(Llist * list, int data)
 	return true;
 }
 
-LlistNode *llistFind(Llist * list, int data)
+LlistNode *llistFind(Llist *list, int data)
 {
 	if (!list) {
 		return NULL;
@@ -76,7 +76,7 @@ LlistNode *llistFind(Llist * list, int data)
 	return node;
 }
 
-LlistNode *llistRmHead(Llist * list)
+LlistNode *llistRmHead(Llist *list)
 {
 	if (!list) {
 		return NULL;
@@ -89,7 +89,7 @@ LlistNode *llistRmHead(Llist * list)
 	return node;
 }
 
-LlistNode *llistRm(Llist * list, int data)
+LlistNode *llistRm(Llist *list, int data)
 {
 	if (!list || !list->head) {
 		return NULL;
@@ -113,7 +113,7 @@ LlistNode *llistRm(Llist * list, int data)
 	return next;
 }
 
-bool llistAddAfter(Llist * list, int data, int after)
+bool llistAddAfter(Llist *list, int data, int after)
 {
 	LlistNode *node = llistFind(list, after);
 	if (!node) {
@@ -132,7 +132,7 @@ bool llistAddAfter(Llist * list, int data, int after)
 	return true;
 }
 
-bool llistDestroy(Llist * list)
+bool llistDestroy(Llist *list)
 {
 	if (!list) {
 		return false;

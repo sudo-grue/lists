@@ -11,7 +11,7 @@ int dllistCompare(int a, int b)
 	return a <= b;
 }
 
-bool dllistSort(Dllist * list, int (*Compare) (int, int))
+bool dllistSort(Dllist *list, int (*Compare) (int, int))
 {
 	if (!list || !list->head) {
 		return false;
@@ -36,7 +36,7 @@ bool dllistSort(Dllist * list, int (*Compare) (int, int))
 	return true;
 }
 
-bool dllistAddAfter(Dllist * list, int data, int after)
+bool dllistAddAfter(Dllist *list, int data, int after)
 {
 	DllistNode *node = dllistFind(list, after);
 	if (!node) {
@@ -58,7 +58,7 @@ bool dllistAddAfter(Dllist * list, int data, int after)
 	return true;
 }
 
-bool dllistAddBefore(Dllist * list, int data, int before)
+bool dllistAddBefore(Dllist *list, int data, int before)
 {
 	DllistNode *node = dllistFind(list, before);
 	if (!node) {
@@ -91,7 +91,7 @@ Dllist *dllistNew(void)
 	return dll;
 }
 
-bool dllistAdd(Dllist * list, int data)
+bool dllistAdd(Dllist *list, int data)
 {
 	if (!list) {
 		return false;
@@ -110,7 +110,7 @@ bool dllistAdd(Dllist * list, int data)
 	return true;
 }
 
-DllistNode *dllistFind(Dllist * list, int data)
+DllistNode *dllistFind(Dllist *list, int data)
 {
 	if (!list) {
 		return NULL;
@@ -125,7 +125,7 @@ DllistNode *dllistFind(Dllist * list, int data)
 	return node;
 }
 
-DllistNode *dllistRmHead(Dllist * list)
+DllistNode *dllistRmHead(Dllist *list)
 {
 	if (!list) {
 		return NULL;
@@ -141,7 +141,7 @@ DllistNode *dllistRmHead(Dllist * list)
 	return node;
 }
 
-DllistNode *dllistRm(Dllist * list, int data)
+DllistNode *dllistRm(Dllist *list, int data)
 {
 	if (!list || !list->head) {
 		return NULL;
@@ -169,7 +169,7 @@ DllistNode *dllistRm(Dllist * list, int data)
 	return next;
 }
 
-bool dllistDestroy(Dllist * list)
+bool dllistDestroy(Dllist *list)
 {
 	if (!list) {
 		return false;
