@@ -1,0 +1,54 @@
+
+#include "Llist.h"
+
+int llistCompare(int a, int b)
+{
+    return a > b;
+}
+
+
+/* 
+ * Singularly Linked List Methods to implement
+ */
+
+Llist *llistNew(void)
+{
+
+    return NULL;
+}
+
+bool llistAdd(Llist *list, int data)
+{
+
+    return false;
+}
+
+LlistNode *llistFind(Llist *list, int data)
+{
+    return NULL;
+}
+
+LlistNode *llistRmHead(Llist *list)
+{
+    return NULL;
+}
+
+LlistNode *llistRm(Llist *list, int data)
+{
+    return NULL;
+}
+
+bool llistSort(Llist *l, int (*Compare) (int, int))
+{
+    return false;
+}
+
+bool llistAddAfter(Llist *l, int data, int after)
+{
+    return false;
+}
+
+bool llistDestroy(Llist *list)
+{
+    return false;
+}    

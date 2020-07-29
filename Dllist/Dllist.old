@@ -1,0 +1,53 @@
+#include "Dllist.h"
+
+int dllistCompare(int a, int b)
+{
+    return a > b;
+}
+
+// Doubly Linked List Methods to implement
+
+Dllist *dllistNew(void)
+{
+    return NULL;
+}
+
+bool dllistAdd(Dllist *list, int data)
+{
+    return false;
+}
+
+DllistNode *dllistFind(Dllist *list, int data)
+{
+    return NULL;
+}
+
+bool dllistAddAfter(Dllist *list, int data, int after)
+{
+    return false;
+}
+
+bool dllistAddBefore(Dllist *list, int data, int before)
+{
+    return false;
+}
+
+bool dllistSort(Dllist *list, int (*Compare) (int, int))
+{
+    return true;
+}
+
+DllistNode *dllistRmHead(Dllist *list)
+{
+    return NULL;
+}
+
+DllistNode *dllistRm(Dllist *list, int data)
+{
+    return NULL;
+}
+
+bool dllistDestroy(Dllist *list)
+{
+    return false;
+}

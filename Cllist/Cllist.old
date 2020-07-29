@@ -1,0 +1,57 @@
+
+#include "Cllist.h"
+
+
+// Compare function for sorting
+int cllistCompare(int a, int b)
+{
+    return a > b;
+}
+
+
+// Circularly Linked List Methods to implement
+
+Cllist *cllistNew(void)
+{
+    return NULL;
+}
+
+bool cllistAdd(Cllist *list, int data)
+{
+    return false;
+}
+
+CllistNode *cllistFind(Cllist *list, int data)
+{
+    return NULL;
+}
+
+CllistNode *cllistRmHead(Cllist *list)
+{
+    return NULL;
+}
+
+CllistNode *cllistRmTail(Cllist *list)
+{
+    return NULL;
+}
+
+CllistNode *cllistRm(Cllist *list, int data)
+{
+    return NULL;
+}
+
+bool cllistDestroy(Cllist *list)
+{
+    return false;
+}
+
+bool cllistInsertAfter(Cllist *list, int data, int after)
+{
+    return false;
+}
+
+bool cllistSort(Cllist *l, int (*Compare)(int, int))
+{
+    return false;
+}
