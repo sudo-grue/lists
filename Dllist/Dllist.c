@@ -11,7 +11,7 @@ int dllistCompare(int a, int b)
 	return a <= b;
 }
 
-bool dllistSort(Dllist *list, int (*Compare) (int, int))
+bool dllistSort(Dllist * list, int (*Compare) (int, int))
 {
 	if (!list || !list->head) {
 		return false;
@@ -36,7 +36,7 @@ bool dllistSort(Dllist *list, int (*Compare) (int, int))
 	return true;
 }
 
-bool dllistAddAfter(Dllist *list, int data, int after)
+bool dllistAddAfter(Dllist * list, int data, int after)
 {
 	DllistNode *node = dllistFind(list, after);
 	if (!node) {
@@ -58,7 +58,7 @@ bool dllistAddAfter(Dllist *list, int data, int after)
 	return true;
 }
 
-bool dllistAddBefore(Dllist *list, int data, int before)
+bool dllistAddBefore(Dllist * list, int data, int before)
 {
 	DllistNode *node = dllistFind(list, before);
 	if (!node) {
@@ -84,102 +84,102 @@ bool dllistAddBefore(Dllist *list, int data, int before)
 
 Dllist *dllistNew(void)
 {
-        Dllist *dll = malloc(sizeof(*dll));
-        if (dll) {
-                dll->head = NULL;
-        }
-        return dll;
+	Dllist *dll = malloc(sizeof(*dll));
+	if (dll) {
+		dll->head = NULL;
+	}
+	return dll;
 }
 
-bool dllistAdd(Dllist *list, int data)
+bool dllistAdd(Dllist * list, int data)
 {
-        if (!list) {
-                return false;
-        }
-        DllistNode *node = malloc(sizeof(*node));
-        if (!node) {
-                return false;
-        }
-        node->next = list->head;
-        if (list->head) {
-                list->head->prev = node;
-        }
-        list->head = node;
-        node->prev = NULL;
-        node->data = data;
-        return true;
+	if (!list) {
+		return false;
+	}
+	DllistNode *node = malloc(sizeof(*node));
+	if (!node) {
+		return false;
+	}
+	node->next = list->head;
+	if (list->head) {
+		list->head->prev = node;
+	}
+	list->head = node;
+	node->prev = NULL;
+	node->data = data;
+	return true;
 }
 
-DllistNode *dllistFind(Dllist *list, int data)
+DllistNode *dllistFind(Dllist * list, int data)
 {
-        if (!list) {
-                return NULL;
-        }
-        DllistNode *node = list->head;
-        while (node != NULL) {
-                if (node->data == data) {
-                        break;
-                }
-                node = node->next;
-        }
-        return node;
+	if (!list) {
+		return NULL;
+	}
+	DllistNode *node = list->head;
+	while (node != NULL) {
+		if (node->data == data) {
+			break;
+		}
+		node = node->next;
+	}
+	return node;
 }
 
-DllistNode *dllistRmHead(Dllist *list)
+DllistNode *dllistRmHead(Dllist * list)
 {
-        if (!list) {
-                return NULL;
-        }
-        DllistNode *node = list->head;
-        if (node) {
-                list->head = node->next;
-                if (list->head) {
-                        list->head->prev = NULL;
-                }
-                node->next = NULL;
-        }
-        return node;
+	if (!list) {
+		return NULL;
+	}
+	DllistNode *node = list->head;
+	if (node) {
+		list->head = node->next;
+		if (list->head) {
+			list->head->prev = NULL;
+		}
+		node->next = NULL;
+	}
+	return node;
 }
 
-DllistNode *dllistRm(Dllist *list, int data)
+DllistNode *dllistRm(Dllist * list, int data)
 {
-        if (!list || !list->head) {
-                return NULL;
-        }
-        DllistNode *node = list->head;
-        if (node->data == data) {
-                return dllistRmHead(list);
-        }
-        DllistNode *next = node->next;
-        while (next != NULL) {
-                if (next->data == data) {
-                        break;
-                }
-                node = next;
-                next = next->next;
-        }
-        if (next) {
-                node->next = next->next;
-                if (next->next) {
-                        next->next->prev = node;
-                }
-                next->prev = NULL;
-                next->next = NULL;
-        }
-        return next;
+	if (!list || !list->head) {
+		return NULL;
+	}
+	DllistNode *node = list->head;
+	if (node->data == data) {
+		return dllistRmHead(list);
+	}
+	DllistNode *next = node->next;
+	while (next != NULL) {
+		if (next->data == data) {
+			break;
+		}
+		node = next;
+		next = next->next;
+	}
+	if (next) {
+		node->next = next->next;
+		if (next->next) {
+			next->next->prev = node;
+		}
+		next->prev = NULL;
+		next->next = NULL;
+	}
+	return next;
 }
 
 bool dllistDestroy(Dllist * list)
 {
-        if (!list) {
-                return false;
-        }
-        DllistNode *temp = list->head;
-        while (temp != NULL) {
-                DllistNode *prev = temp;
-                temp = temp->next;
-                free(prev);
-        }
-        free(list);
-        return true;
+	if (!list) {
+		return false;
+	}
+	DllistNode *temp = list->head;
+	while (temp != NULL) {
+		DllistNode *prev = temp;
+		temp = temp->next;
+		free(prev);
+	}
+	free(list);
+	return true;
 }

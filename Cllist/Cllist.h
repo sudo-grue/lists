@@ -8,13 +8,13 @@
 typedef struct _CllistNode CllistNode;
 
 struct _CllistNode {
-    int data;
-    CllistNode *next;   
+	int data;
+	CllistNode *next;
 };
 
 typedef struct _Cllist {
-    CllistNode *head;
-    CllistNode *tail;
+	CllistNode *head;
+	CllistNode *tail;
 } Cllist;
 
 // Compare function
@@ -38,7 +38,7 @@ Cllist *cllistNew(void);
     Return:
         bool: true on success, false on failure
 */
-bool cllistAdd(Cllist *list, int data);
+bool cllistAdd(Cllist * list, int data);
 
 /* cllistFind() searches a circularly linked list for the first occurance of a given value
     Args:
@@ -47,7 +47,7 @@ bool cllistAdd(Cllist *list, int data);
     Return:
         CllistNode* of the found node. null if node not found.
 */
-CllistNode *cllistFind(Cllist *list, int data);
+CllistNode *cllistFind(Cllist * list, int data);
 
 /* cllistRmHead() removes only the head of a circularly linked list
     Args:
@@ -55,7 +55,7 @@ CllistNode *cllistFind(Cllist *list, int data);
     Return:
         CllistNode* of the removed head. null if list is empty.
 */
-CllistNode *cllistRmHead(Cllist *list);
+CllistNode *cllistRmHead(Cllist * list);
 
 /* cllistRmTail() removes only the tail of a circularly linked list
     Args:
@@ -63,7 +63,7 @@ CllistNode *cllistRmHead(Cllist *list);
     Return:
         CllistNode* of the removed tail. null if list is empty.
 */
-CllistNode *cllistRmTail(Cllist *list);
+CllistNode *cllistRmTail(Cllist * list);
 
 /* cllistRm() removes from existing circularly linked list
     Args:
@@ -72,7 +72,7 @@ CllistNode *cllistRmTail(Cllist *list);
     Return:
         CllistNode* of the removed node. null if node not found.
 */
-CllistNode *cllistRm(Cllist *list, int data);
+CllistNode *cllistRm(Cllist * list, int data);
 
 /* cllistDestroy() destroys a circularly linked list
     Args:
@@ -80,7 +80,7 @@ CllistNode *cllistRm(Cllist *list, int data);
     Return:
         bool : true on success, false of failure
 */
-bool cllistDestroy(Cllist *list);
+bool cllistDestroy(Cllist * list);
 
 /* cllistInsertAfter() data to insert after data point
     Args:
@@ -90,7 +90,7 @@ bool cllistDestroy(Cllist *list);
     Return:
         bool : true on success, false on error or missing data value
 */
-bool cllistInsertAfter(Cllist *list, int data, int after);
+bool cllistInsertAfter(Cllist * list, int data, int after);
 
 /* cllistSort() sort a linked list in place in
                 ascending/aplhanumerical order (i.e.: 1 - 10)
@@ -102,6 +102,6 @@ bool cllistInsertAfter(Cllist *list, int data, int after);
     Return:
         bool : true on success, false on empty lists or no lists
 */
-bool cllistSort(Cllist *l, int (*Compare) (int, int));
+bool cllistSort(Cllist * l, int (*Compare) (int, int));
 
 #endif
